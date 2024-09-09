@@ -1,0 +1,13 @@
+<h1>{{ app_name }}</h1>
+<p>{{ name }}</p>
+
+<h3>Products</h3>
+<ul>
+    {% for product in products %}
+        <li>
+            <strong>{{ product.name }}</strong><br>
+            Price: {{ product.price }}IDR<br>
+            Description: {{ product.description }}
+        </li>
+    {% endfor %}
+</ul>
