@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-e*+g0w037d57da*18d_lsw7t$%rsa+ti=j2q)l_$g()lp&%46e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "muhammad-brian31-VirtualShop.pbp.cs.ui.ac.id"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "muhammad-brian31-virtualshop.pbp.cs.ui.ac.id"]
 
 
 # Application definition
@@ -124,4 +124,4 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Username: muhammad.brian31
-# Password: oqHw_iTzz8hVRk5l2CEKFwDAfx7sUV4N
+# Password: kPKtT9ImzZmP5U31Zb2A1quifeeRRAbx
