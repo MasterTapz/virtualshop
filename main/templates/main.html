@@ -1,14 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
 <h1>{{ app_name }}</h1>
 <p>{{ name }}</p>
 
-<h3>Products</h3>
-<ul>
-    {% for product in products %}
-        <li>
-            <strong>{{ product.name }}</strong><br>
-            Price: {{ product.price }}IDR<br>
-            Description: {{ product.description }}<br>
-            Status: {{ product.status | title }}
-        </li>
-    {% endfor %}
-</ul>
+{% if not products %}
+<p>There are no product data in Virtual Shop.</p>
+{% else %}
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Description</th>
+    <th>Status</th>
+  </tr>
+  {% for product in products %}
+  <tr>
+    <td>{{ product.name }}</td>
+    <td>{{ product.price }}</td>
+    <td>{{ product.description }}</td>
+    <td>{{ product.status }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endif %}
+
+<br />
+
+<a href="{% url 'main:create_product_entry' %}">
+  <button>Add New Product Entry</button>
+</a>
+
+{% endblock content %}
