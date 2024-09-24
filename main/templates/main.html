@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <h1>{{ app_name }}</h1>
 <p>{{ name }}</p>
 
@@ -24,10 +25,17 @@
 </table>
 {% endif %}
 
-<br />
+
+<br/>
 
 <a href="{% url 'main:create_product_entry' %}">
   <button>Add New Product Entry</button>
 </a>
+
+<a href="{% url 'main:logout' %}">
+  <button>Logout</button>
+</a>
+<h5>Last login session: {{ last_login }}</h5>
+
 
 {% endblock content %}
