@@ -124,4 +124,4 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Username: muhammad.brian31
-# Password: kPKtT9ImzZmP5U31Zb2A1quifeeRRAbx
+# Password: bWiY1QkAlhGpMfSIQtFYjqol3LAZnAwT
