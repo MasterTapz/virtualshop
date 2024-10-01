@@ -13,6 +13,25 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 
 
+def delete_product(request, id):
+    product = Product.objects.get(pk = id)
+    product.delete()
+    return HttpResponseRedirect(reverse('main:show_main'))
+
+
+def edit_product(request, id):
+    product = Product.objects.get(pk = id)
+
+    if request.method == 'POST':
+            form = ProductForm(request.POST, instance=product)  # Bind the form to the product instance and POST data
+            if form.is_valid():
+                form.save()
+                return HttpResponseRedirect(reverse('main:show_main'))  # Redirect after saving
+    else:
+        form = ProductForm(instance=product)  # Prepopulate the form with the product instance
+
+    context = {'form': form}
+    return render(request, 'edit_product.html', context)
 
 
 def logout_user(request):
@@ -36,6 +55,7 @@ def login_user(request):
       form = AuthenticationForm(request)
    context = {'form': form}
    return render(request, 'login.html', context)
+
 
 
 def register(request):
@@ -86,14 +106,14 @@ def create_product_entry(request):
 
 @login_required(login_url='/login')
 def show_main(request):
-    products = Product.objects.all()
     product_entries = Product.objects.filter(user=request.user)
 
 
     context = {
         'app_name': 'VirtualShop',
         'name': 'Muhammad Brian Subekti',
-        'products': products,
+        'class': 'PBP KKI',
+        'npm': '2306256444',
         'name': request.user.username,
         'product_entries':product_entries,
         'last_login': request.COOKIES['last_login'],
